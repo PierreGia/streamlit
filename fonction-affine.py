@@ -9,7 +9,7 @@ st.title("Graphique d'une fonction affine y = ax + b")
 a = st.slider("Choisir la valeur de (a)", min_value=-10.0, max_value=10.0, value=1.0, step=0.1)
 b = st.slider("Choisir la valeur de (b)", min_value=-10.0, max_value=10.0, value=0.0, step=0.1)
 
-# Génération des valeurs x dans l'intervalle [-10, 10]
+# Géner les valeurs x dans l'intervalle [-10, 10]
 x = np.linspace(-10, 10, 400)
 
 # Calcul des valeurs y correspondantes avec la formule y = ax + b
@@ -20,8 +20,7 @@ fig, ax = plt.subplots()
 ax.plot(x, y, label=f"y = {a}x + {b}")
 ax.set_xlabel("x")
 ax.set_ylabel("y")
-ax.axhline(0, color='black',linewidth=1)
-ax.axvline(0, color='black',linewidth=1)
+
 ax.grid(True)
 ax.legend()
 
