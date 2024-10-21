@@ -10,7 +10,7 @@ import plotly.express as px
 
 def load_data():
 
-    df = pd.read_csv("C:/Users/33761/OneDrive/Bureau/bonne pratique/test.csv")
+    df = pd.read_csv("C:/Users/33761/OneDrive/Bureau/streamlit/Data/test.csv")
     return df
 
 
