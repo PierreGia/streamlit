@@ -7,7 +7,7 @@ st.title("Courbe affine avec points aléatoires et calcul du MSE")
 
 # Sliders pour choisir a et b
 a = st.slider("Choisir la pente (a)", min_value=-10.0, max_value=10.0, value=1.0, step=0.1)
-b = st.slider("Choisir l'ordonnée à l'origine (b)", min_value=-10.0, max_value=10.0, value=0.0, step=0.1)
+b = st.slider("Choisir l'ordonnée à l'origine (b)", min_value=-10.0, max_value=10.0, value=0.0, step=0.1,)
 
 # Génération des valeurs x dans l'intervalle [-10, 10]
 x = np.linspace(-10, 10, 400)
@@ -31,8 +31,10 @@ ax.legend()
 st.pyplot(fig)
 
 # Etape 2: Calcul de l'erreur quadratique moyenne (MSE)
-mse = np.mean((y - points_aleatoires)**2)
-st.write(f"Erreur quadratique moyenne (MSE) entre la droite affine et les points aléatoires : {mse}")
+mse = np.mean((y - points_aleatoires) ** 2)
+st.write(
+    f"Erreur quadratique moyenne (MSE) entre la droite affine et les points aléatoires : {mse}"
+)
 
 # Stocker a et mse dans une liste pour les afficher
 mse_values = []
@@ -41,7 +43,7 @@ a_values = []
 # Parcourir différentes valeurs de a pour observer le MSE
 for a_iter in np.linspace(-10, 10, 100):  # Variation de a
     y_iter = a_iter * x + b
-    mse_iter = np.mean((y_iter - points_aleatoires)**2)
+    mse_iter = np.mean((y_iter - points_aleatoires) ** 2)
     mse_values.append(mse_iter)
     a_values.append(a_iter)
 
@@ -55,4 +57,3 @@ ax2.legend()
 
 # Afficher le graphique de MSE dans Streamlit
 st.pyplot(fig2)
-
