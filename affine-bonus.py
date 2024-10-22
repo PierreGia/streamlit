@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+
 # Etape 1: Générer une droite affine y = ax + b avec des points aléatoires
 st.title("Courbe affine avec points aléatoires et calcul du MSE")
 
