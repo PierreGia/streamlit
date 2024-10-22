@@ -24,8 +24,6 @@ ax.plot(x, y, label=f"Droite affine y = {a}x + {b}", color="blue")
 ax.scatter(x, points_aleatoires, color="red", label="Points aléatoires", marker="o")
 ax.set_xlabel("x")
 ax.set_ylabel("y")
-ax.axhline(0, color='black',linewidth=1)
-ax.axvline(0, color='black',linewidth=1)
 ax.grid(True)
 ax.legend()
 
@@ -49,7 +47,7 @@ for a_iter in np.linspace(-10, 10, 100):  # Variation de a
 
 # Etape 3: Afficher le graphique de MSE en fonction de a
 fig2, ax2 = plt.subplots()
-ax2.plot(a_values, mse_values, label="MSE en fonction de a", color="green")
+ax2.plot(a_values, mse_values, label="MSE en fonction de a", color="blue")
 ax2.set_xlabel("a (pente)")
 ax2.set_ylabel("MSE (Erreur quadratique moyenne)")
 ax2.grid(True)
@@ -58,5 +56,3 @@ ax2.legend()
 # Afficher le graphique de MSE dans Streamlit
 st.pyplot(fig2)
 
-# Conclusion sur l'influence de b
-st.write("Réflexion : L'influence de 'b' dans l'estimation de 'a' peut être observée en analysant la courbe MSE en fonction de 'a'.")
